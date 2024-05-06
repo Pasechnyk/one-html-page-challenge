@@ -14,12 +14,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies and build
+        working-directory: ./github.com/Pasechnyk/one-html-page-challenge.git
         run: |
-          npm install  
-          npm run build 
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build 
+          publish_dir: ./github.com/Pasechnyk/one-html-page-challenge.git
